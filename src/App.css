@@ -1,38 +1,80 @@
 .App {
   text-align: center;
+  width: 75%;
+  margin: auto;
+  border: thin solid teal;
+}
+/* 
+.todoText{
+  text-align: left;
+  float: right;
+  width: 50%;
+  border-left: thin solid silver;
+  padding-left: 4px;
+  padding-bottom: 5px;
+  padding: 0px 0px 5px 4px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todoCompleted{
+  text-align: left;
+  float: right;
+  padding: 0px 7px 5px 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.formatterTodoList{
+  
+  padding: 25px 0 0 0;
+}
+ */
+
+
+.App {
+  /* background: #209cee; */
+  padding: 30px;
+  height: 100vh;
+background: #e1ffff; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #e1ffff 0%, #fdffff 0%, #fdffff 0%, #e1ffff 7%, #e1ffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #e1ffff 0%,#fdffff 0%,#fdffff 0%,#e1ffff 7%,#e1ffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #e1ffff 0%,#fdffff 0%,#fdffff 0%,#e1ffff 7%,#e1ffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todoText{
+  text-align: left;
+  float: right;
+  width: 75%;
+  border-left: thin solid silver;
+  padding-left: 5px;
+}
+
+.todo-list {
+  background: whitesmoke;
+  border: 2px solid silver;
+  padding: 5px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.todo {
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 3px 10px;
+  font-size: 12px;
+  margin-bottom: 6px;
+  border-radius: 3px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.formInput {
+  margin-top: 5px;
+  font-size: 14px;
+  border: thin solid silver;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  border: thin solid silver; 
+  background: #e1ffff;
 }
