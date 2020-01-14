@@ -7,8 +7,8 @@ import TodoForm from './TodoForm';
 
 function App() {
   //setting count buckets to track number of open and complete todos
-  const [countopen, setCountopen] = useState(0);
-  const [countcomplete, setCountcomplete] = useState(0);
+  //const [countopen, setCountopen] = useState(0);
+  //const [countcomplete, setCountcomplete] = useState(0);
   //set the todos into state. Normally i'd make a service call or a graphql query/mutation call but my server side code is down....
   const [todos, setTodos] = useState([
     {
@@ -41,18 +41,6 @@ function App() {
     setTodos(newTodos);
   }
 
-  //tallying the completed vs open todos - I know this is a core req but I ran out of time trying to get the app to call it
-  const tallyTodos = todos => {
-    todos.map((todo, index) => {
-      //console.log(todo[index].completed);
-      if (todo[index].completed === 0) {
-        setCountopen(countopen + 1);
-      } else {
-        setCountcomplete(countcomplete + 1);
-      }
-    })
-  }
-
   //on clicking the complete button the todo.completed part gets updated to 1 "completed"  
   const completeTodo = index => {
     const newTodos = [...todos];
@@ -60,6 +48,10 @@ function App() {
     setTodos(newTodos);
   }
 
+  const completedTodos = todos.filter(todo => todo.completed == 1);
+  const openTodos = todos.length - completedTodos.length;
+
+  console.log(completedTodos);
   //loop (map) over each todo and run the Todo function to render it. The Todo and the TodoForm are in their own components.  
   return (
     <div className="App">
@@ -68,11 +60,11 @@ function App() {
       <div className="todo-list">
         {
           todos.map((todo, index) => (
-            <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} tallyTodos={tallyTodos} />
+            <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} />
           ))
 
         }
-        Open: {countopen} Closed: {countcomplete}
+        Open: {openTodos} Closed: {completedTodos.length}
       </div>
       <div>
       </div>
